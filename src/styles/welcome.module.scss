@@ -33,7 +33,7 @@
 
       button {
         padding: 1.3rem 1.8rem;
-        border: 2px solid $primary;
+        border: 1px solid $primary;
         border-radius: 20px;
         background: transparent;
         color: $primary;
@@ -43,7 +43,7 @@
 
         &:hover {
           background: $primary;
-          border: 2px solid ;
+          border: 1px solid ;
           color: $white;
         }
       }

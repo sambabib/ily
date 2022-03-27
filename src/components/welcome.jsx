@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 // styles
 import styles from '../styles/welcome.module.scss';
 
@@ -6,7 +8,26 @@ import eiffelTower from '../assets/eiffel-tower.svg';
 
 const Welcome = () => {
   return (
-    <div className={styles.welcome}>
+    <motion.div
+      className={styles.welcome}
+      initial='pageInitial'
+      animate='pageAnimate'
+      exit='pageExit'
+      variants={{
+        pageInitial: {
+          opacity: 0,
+        },
+        pageAnimate: {
+          opacity: 1,
+          transition: {
+            delay: 1,
+          },
+        },
+        pageExit: {
+          opacity: 0,
+        },
+      }}
+    >
       <section className={styles.hero}>
         <div className={styles.hero__text}>
           <h3>Hey mama,</h3>
@@ -22,14 +43,14 @@ const Welcome = () => {
             adore you everyday. Each day with dfferent meaning.
           </p>
 
-          <button>Ayyyyy! (In Ini's voice). Show me baby!</button>
+          <button>Whoop! Whoop! (In Ini's voice). Show me baby!</button>
         </div>
 
         <div className={styles.hero__img}>
           <img src={eiffelTower} alt='eiffel tower' />
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

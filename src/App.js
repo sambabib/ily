@@ -35,18 +35,17 @@ const App = () => {
     <>
       <AnimatePresence exitBeforeEnter>
         {loading ? (
-          null
-          // <div className={styles.app}>
-          //   <div className={styles.preloader}>
-          //     <PreLoader />
-          //   </div>
+          <div className={styles.app}>
+            <div className={styles.preloader}>
+              <PreLoader />
+            </div>
 
-          //   <div className={styles.bg__video}>
-          //     <video autoPlay loop muted>
-          //       <source src={beach} />
-          //     </video>
-          //   </div>
-          // </div>
+            <div className={styles.bg__video}>
+              <video autoPlay loop muted>
+                <source src={beach} />
+              </video>
+            </div>
+          </div>
         ) : (
           <motion.div className={styles.app}>
             <Overlay />

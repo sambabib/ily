@@ -20,6 +20,16 @@
   }
 
   .sound__container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .press__play {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     button {
       border: none;
       padding: 1rem;
@@ -28,6 +38,42 @@
       background: transparent;
       border-radius: 50%;
       cursor: pointer;
+    }
+
+    p {
+      font-size: 0.75rem;
+      color: $grey;
+    }
+
+    .music {
+      color: $primary;
+    }
+
+    .arrow {
+      color: $grey;
+      animation: bounce 2s linear infinite;
+    }
+
+    @keyframes bounce {
+      0%,
+      25%,
+      55%,
+      75%,
+      100% {
+        transform: translateX(0);
+      }
+
+      45% {
+        transform: translateX(-10px);
+      }
+
+      65% {
+        transform: translateX(-5px);
+      }
+
+      85% {
+        transform: translateX(5px);
+      }
     }
   }
 }
