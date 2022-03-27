@@ -5,6 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PreLoader from './components/preloader';
 import Overlay from './components/overlay';
 import Hi from './components/hi';
+import Welcome from './components/welcome';
+import Cursor from './components/cursor';
+import Navbar from './components/navbar';
 
 // assets
 import beach from './assets/beach.mp4';
@@ -32,17 +35,18 @@ const App = () => {
     <>
       <AnimatePresence exitBeforeEnter>
         {loading ? (
-          <div className={styles.app}>
-            <div className={styles.preloader}>
-              <PreLoader />
-            </div>
+          null
+          // <div className={styles.app}>
+          //   <div className={styles.preloader}>
+          //     <PreLoader />
+          //   </div>
 
-            <div className={styles.bg__video}>
-              <video autoPlay loop muted>
-                <source src={beach} />
-              </video>
-            </div>
-          </div>
+          //   <div className={styles.bg__video}>
+          //     <video autoPlay loop muted>
+          //       <source src={beach} />
+          //     </video>
+          //   </div>
+          // </div>
         ) : (
           <motion.div className={styles.app}>
             <Overlay />
@@ -51,7 +55,9 @@ const App = () => {
             ) : (
               <>
                 <Overlay />
-                <p>rest of app</p>
+                <Cursor />
+                <Navbar />
+                <Welcome />
               </>
             )}
           </motion.div>
