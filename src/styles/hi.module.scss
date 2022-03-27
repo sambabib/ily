@@ -1,0 +1,70 @@
+// partials
+@import 'variable';
+
+@import 'variable';
+
+.hi {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $white;
+  overflow: hidden;
+
+  .hi__container {
+    height: 50%;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    transform: translate3d(0, 0, 0);
+    animation: marquee 8s linear infinite;
+    animation-play-state: running;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    p {
+      display: inline-block;
+      font-size: $xl-large;
+      color: $black;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translate3d(calc(35%), 0, 0);
+      }
+
+      100% {
+        transform: translate3d(calc(-35%), 0, 0);
+      }
+    }
+  }
+}
+
+// media queries
+@media (max-width: 689px) {
+  .hi__container {
+    p {
+      font-size: $sm-large !important;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translate3d(calc(45%), 0, 0);
+      }
+
+      100% {
+        transform: translate3d(calc(-45%), 0, 0);
+      }
+    }
+  }
+}
