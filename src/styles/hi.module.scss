@@ -1,7 +1,7 @@
 // partials
 @import 'variable';
 
-@import 'variable';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .hi {
   position: relative;
@@ -14,7 +14,7 @@
   overflow: hidden;
 
   .hi__container {
-    height: 50%;
+    height: 35%;
     width: fit-content;
     display: flex;
     justify-content: center;
@@ -34,7 +34,8 @@
 
     p {
       display: inline-block;
-      font-size: $xl-large;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 12rem;
       color: $black;
     }
 

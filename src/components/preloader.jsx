@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Stagger } from '../animation/animation';
+import { stagger } from '../animation/animation';
 
 // styles
 import styles from '../styles/preloader.module.scss';
@@ -29,7 +29,7 @@ const PreLoader = () => {
   }, []);
 
   return (
-    <motion.div className={styles.preloader} variants={Stagger}>
+    <motion.div className={styles.preloader} variants={stagger}>
       <div className={styles.spinner}>
         <span></span>
       </div>

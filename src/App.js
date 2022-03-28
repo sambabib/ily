@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Routes, Route } from 'react-router-dom';
 
 // components
 import PreLoader from './components/preloader';
@@ -8,6 +9,7 @@ import Hi from './components/hi';
 import Welcome from './components/welcome';
 import Cursor from './components/cursor';
 import Navbar from './components/navbar';
+import Quotes from './components/quotes';
 
 // assets
 import beach from './assets/beach.mp4';
@@ -56,7 +58,10 @@ const App = () => {
                 <Overlay />
                 <Cursor />
                 <Navbar />
-                <Welcome />
+                <Routes>
+                  <Route path='/' element={<Welcome />} />
+                  <Route path='quotes' element={<Quotes />} />
+                </Routes>
               </>
             )}
           </motion.div>
