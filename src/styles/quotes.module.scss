@@ -75,11 +75,19 @@
   .quotes {
     .back__home {
       left: 1rem;
-      top: 140px;
+      top: 120px;
     }
 
     .quotes__box {
-        width: 100% !important;
+      width: 100% !important;
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 969px) {
+  .quotes {
+    .back__home {
+      top: 140px;
     }
   }
 }

@@ -42,7 +42,7 @@
 
         &:hover {
           background: $primary;
-          border: px solid ;
+          border: px solid;
           color: $white;
         }
       }
@@ -65,7 +65,6 @@
 // media queries
 @media (max-width: 698px) {
   .welcome {
-
     .hero {
       display: flex;
       flex-direction: column-reverse;
@@ -80,9 +79,32 @@
 
       .hero__img {
         height: 300px;
-        margin-top: 2rem !important;
+        margin-top: 4rem !important;
       }
     }
+  }
+}
 
+@media (min-width: 700px) and (max-width: 969px) {
+  .welcome {
+    max-width: 800px !important;
+
+    .hero {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 2rem;
+      width: 100%;
+
+      .hero__text,
+      .hero__img {
+        width: 100%;
+        padding: 0 1rem;
+      }
+
+      .hero__img {
+        height: 500px;
+        margin-top: 1rem !important;
+      }
+    }
   }
 }
