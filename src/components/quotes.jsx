@@ -1,14 +1,34 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
+// data
+import { quotes } from '../data/quoteWords';
+
 // styles
 import styles from '../styles/quotes.module.scss';
 
-// assets
-// import cheers from '../assets/Cheers.png';
-
 const Quotes = () => {
+  const [showQuotes, setShowQuotes] = useState('');
+
+  useEffect(() => {
+    var quotePosition = 0;
+
+    const delayedQuotes = () => {
+      setShowQuotes(quotes[quotePosition].text);
+
+      quotePosition++;
+
+      if (quotePosition < quotes.length) {
+        const quoteTimeout = setTimeout(delayedQuotes, 5000);
+        return () => clearTimeout(quoteTimeout);
+      }
+    };
+
+    delayedQuotes();
+  }, []);
+
   return (
     <motion.div
       className={styles.quotes}
@@ -113,12 +133,8 @@ const Quotes = () => {
           initial='initial'
           animate='animate'
         >
-          I think you have the most piercing, beautiful eyes in the universe.
+          {showQuotes}
         </motion.p>
-        {/*      
-        <div className={styles.quotes__img}>
-          <img src={cheers} alt="cheers" />
-        </div> */}
       </motion.div>
     </motion.div>
   );

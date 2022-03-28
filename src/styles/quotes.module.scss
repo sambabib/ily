@@ -67,21 +67,19 @@
       left: 10%;
       z-index: 2;
     }
+  }
+}
 
-    // .quotes__img {
-    //   position: absolute;
-    //   right: -5px;
-    //   // z-index: -2;
-    //   width: 300px;
-    //   height: 300px;
+// media queries
+@media (max-width: 698px) {
+  .quotes {
+    .back__home {
+      left: 1rem;
+      top: 140px;
+    }
 
-    //   img {
-    //     position: absolute;
-    //     right: 0;
-    //     max-width: 100%;
-    //     max-height: 100%;
-    //     background-blend-mode: difference;
-    //   }
-    // }
+    .quotes__box {
+        width: 100% !important;
+    }
   }
 }
